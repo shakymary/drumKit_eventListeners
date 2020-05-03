@@ -3,22 +3,54 @@
 
 //     alert("I got clicked");
 // });
+var numberOfButtons = document.querySelectorAll(".drum").length;
 
-for (var i = 0; 1 < document.querySelectorAll(".drum").length; i++) {
+for (var i = 0; i < numberOfButtons; i++) {
+
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
 
-        this.style.color = "white";
-        var audio = new Audio('sounds/tom-3.mp3');
-        audio.play();
+        var buttonInnerHTML = this.innerHTML;
 
-        // document.querySelector(".first").addEventListener("click", function () {
-        //     var audio = new Audio('sounds/tom-3.mp3');
-        //     audio.play();
+        switch (buttonInnerHTML) {
+            case "w":
+                var tom3 = new Audio('sounds/tom-3.mp3');
+                tom3.play();
+                break;
 
-        // document.querySelectorAll(".a drum")[i].addEventListener("click", function () {
-        //     var audio = new Audio('sounds/crash.mp3');
-        //     audio.play();
+            case "a":
+                var crash = new Audio('sounds/crash.mp3');
+                crash.play();
+                break;
 
+            case "s":
+                var kickBass = new Audio('sounds/kick-bass.mp3');
+                kickBass.play();
+                break;
+
+            case "d":
+                var snare = new Audio('sounds/snare.mp3');
+                snare.play();
+                break;
+
+            case "j":
+                var tom1 = new Audio('sounds/tom-1.mp3');
+                tom1.play();
+                break;
+
+            case "k":
+                var tom2 = new Audio('sounds/tom-2.mp3');
+                tom2.play();
+                break;
+
+            case "l":
+                var tom4 = new Audio('sounds/tom-4.mp3');
+                tom4.play();
+                break;
+
+            default:
+                console.log(buttonInnerHTML);
+
+        }
 
     });
 
